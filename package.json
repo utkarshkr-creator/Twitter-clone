@@ -1,0 +1,11 @@
+{
+  "name": "twiter-clone",
+  "version": "1.0.0",
+  "description": "backend service for twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Utkarsh Kumar",
+  "license": "MIT"
+}
