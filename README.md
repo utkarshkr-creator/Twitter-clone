@@ -33,10 +33,10 @@ user should be able to post a tweet.
 - word
 - List of tweets
 - ranking
-
-### other users should be able to like a tweet
-### other users should be able to tweet to a tweet
-### other users shold be able to retweet
-### user should be able to visit a profile and follow
-### user should be able to visit a profile and follow
-### search by hashTags
+## Others
+- other users should be able to like a tweet
+- other users should be able to tweet to a tweet
+- other users shold be able to retweet
+- user should be able to visit a profile and follow
+- user should be able to visit a profile and follow
+- search by hashTags
