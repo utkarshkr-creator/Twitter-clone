@@ -1,3 +1,3 @@
-module.export={
-    
+module.exports={
+    TweetModel:require('./Tweet-model')
 }

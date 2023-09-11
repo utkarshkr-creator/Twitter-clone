@@ -5,7 +5,8 @@ user should be able to post a tweet.
 - content (250 char MAX)
 - image upload
 - likes
-- comment tweets
+- noOfRetweets
+- comment [tweets]
 - hashtages(#)
 - user
 
