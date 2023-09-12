@@ -17,6 +17,7 @@ async function signUp(data){
 async function signIn(data){
     try {
         // check user with email is available
+        // console.log(data);
         const email=data.email;
         const currentPassword=data.password;
         const User=await userRepo.findByEmail({email:email});

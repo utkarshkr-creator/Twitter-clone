@@ -1,31 +1,39 @@
-const {CommentRepository, HashtagRepository}=require('../repositories')
+const {CommentRepository, TweetRepository}=require('../repositories')
 const CommentRepo=new CommentRepository();
-const HashtagRepo=new HashtagRepository();
+const TweetRepo=new TweetRepository();
 const {StatusCodes}=require('http-status-codes');
 const AppError=require('../utils/error/app-error')
 
-async function createTweet(data){
+async function createComment(data){
     try {
-      
-        const Comment=await CommentRepo.create(data);
-        return Comment;
-       
+        let commentable;
+        // console.log(data);
+        if(data.modelType=="Tweet"){
+            commentable=await TweetRepo.get(data.modelId);
+        }
+        else if(data.modelType=="Comment"){
+            //todo
+            commentable=await CommentRepo.get(data.modelId);
+        }
+        else{
+            throw error;
+        }
+        const Comment=await CommentRepo.create({
+            content:data.content,
+            user:data.userId,
+            onModel:data.modelType,
+            commentable:data.modelId
+        });
+        await commentable.comments.push(Comment);
+        await commentable.save();
+        return Comment;  
     } catch (error) {
         console.log(error)
-        throw new AppError('Something went wrong while creating tweet', StatusCodes.INTERNAL_SERVER_ERROR);
-    }
-}
-async function getAllTweets(){
-    try {
-        const Tweets=await TweetRepo.getAll();
-        return Tweets;
-    } catch (error) {
-        console.log(error)
-        throw new AppError('Something went wrong while creating tweet', StatusCodes.INTERNAL_SERVER_ERROR);
+        throw new AppError('Something went wrong while creating comment', StatusCodes.INTERNAL_SERVER_ERROR);
     }
 }
 
+
 module.exports={
-    createTweet,
-    getAllTweets
+    createComment
 }

@@ -3,10 +3,9 @@ user should be able to post a tweet.
 ## Tweet
 
 - content (250 char MAX)
-- image upload
 - likes
 - noOfRetweets
-- comment [tweets]
+- comment 
 - hashtages(#)
 - user
 
@@ -33,10 +32,9 @@ user should be able to post a tweet.
 - word
 - List of tweets
 - ranking
-## Others
-- other users should be able to like a tweet
-- other users should be able to tweet to a tweet
-- other users shold be able to retweet
-- user should be able to visit a profile and follow
-- user should be able to visit a profile and follow
-- search by hashTags
+
+## Postman Routes documentation link
+- 
+```
+https://documenter.getpostman.com/view/25030043/2s9YC32Zfv
+```

@@ -23,9 +23,10 @@ async function signUp(req,res){
 }
 async function signIn(req,res){
     try {
+        // console.log(req)
        const Token=await UserService.signIn({
-          email:req.body.email,
-          password:req.body.password
+          email:req.query.email,
+          password:req.query.password
        });
         SucessResponse.data=Token;
         return res

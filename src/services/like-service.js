@@ -1,6 +1,7 @@
-const {TweetRepository, LikeRepository}=require('../repositories')
+const {TweetRepository, LikeRepository, CommentRepository}=require('../repositories')
 const TweetRepo=new TweetRepository();
 const LikeRepo=new LikeRepository();
+const CommentRepo=new CommentRepository();
 const {StatusCodes}=require('http-status-codes');
 const AppError=require('../utils/error/app-error')
 
@@ -13,7 +14,7 @@ async function toggelLike(data){
             likeable=await TweetRepo.get(data.modelId);
         }
         else if(data.modelType=="Comment"){
-            //todo
+            likeable=await CommentRepo.get(data.modelId);
         }
         else{
             throw error;
@@ -37,7 +38,7 @@ async function toggelLike(data){
                 onModel:data.modelType,
                 likeable:data.modelId
             });
-            likeable.likes.push(newLike);
+            await likeable.likes.push(newLike);
             await likeable.save();
             
         }

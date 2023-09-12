@@ -8,7 +8,8 @@ const commentSchema = new Schema({
     },
     user:{
         type:Schema.Types.ObjectId,
-        ref:'User'
+        ref:'User',
+        required:[true,'User is required']
     },
     likes: [
         {
@@ -16,6 +17,13 @@ const commentSchema = new Schema({
           ref: "Like",
         },
     ],
+    comments: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: "Comment",
+        },
+    ],
+
     onModel:{
         type:String,
         required:true,
@@ -25,7 +33,6 @@ const commentSchema = new Schema({
         type:Schema.Types.ObjectId,
         required:true,
         refPath:'onModel'
-
     }
 });
 
