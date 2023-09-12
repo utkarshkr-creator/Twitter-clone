@@ -34,7 +34,6 @@ user should be able to post a tweet.
 - ranking
 
 ## Postman Routes documentation link
-- 
 ```
 https://documenter.getpostman.com/view/25030043/2s9YC32Zfv
 ```

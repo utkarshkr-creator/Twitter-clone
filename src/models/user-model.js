@@ -61,6 +61,7 @@ userSchema.methods.genJWT=function generate(){
     })
 
 }
+//https://www.passportjs.org/packages/passport-jwt/ for auth
 
 const User=mongoose.model('User',userSchema);
 
