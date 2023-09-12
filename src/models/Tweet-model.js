@@ -17,8 +17,9 @@ const tweetSchema = new Schema({
      comment:{
         type:String,
         default:''
-     }
-});
+     },
+     
+},{timestamps:true});
 
 const Tweet=mongoose.model('Tweet',tweetSchema);
 
