@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const tweetSchema = new Schema({
      content:{
         type:String,
+        required:[true,'Must be some content with tweet'],
      },
      likes:{
         type:Number,

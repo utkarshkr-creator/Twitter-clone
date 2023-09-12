@@ -9,7 +9,8 @@ const hashTagSchema = new Schema({
     },
     tweets:[
         {
-            type:Schema.Types.ObjectId
+            type:Schema.Types.ObjectId,
+            ref:'Tweet',
         }
     ]
 });
