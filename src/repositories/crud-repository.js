@@ -7,6 +7,10 @@ class CrudRepository{
         const res=await this.model.create(data);
         return res;
     }
+    async findOne(data){
+        const res=await this.model.findOne(data);
+        return res;
+    }
     async destroy(id){
         const res=await this.model.findByIdAndDelete(id);
         return res;

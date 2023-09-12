@@ -6,6 +6,8 @@ const likeSchema = new Schema({
         type:Schema.Types.ObjectId,
         ref:"User",
     },
+    //https://mongoosejs.com/docs/populate.html#dynamic-ref
+    //https://mongoosejs.com/docs/populate.html#dynamic-ref
     onModel:{
         type:String,
         required:true,
