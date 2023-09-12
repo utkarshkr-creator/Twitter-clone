@@ -1,3 +1,5 @@
 module.exports={
-    TweetModel:require('./Tweet-model')
+    TweetModels:require('./Tweet-model'),
+    HashtagModel:require('./HashTag-model'),
+    
 }

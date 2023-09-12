@@ -7,17 +7,18 @@ const tweetSchema = new Schema({
      },
      likes:{
         type:Number,
+        default:0,
      },
      noOfRetweets:{
-        type:Number
+        type:Number,
+        default:0,
      },
      comment:{
         type:String,
+        default:''
      }
 });
 
 const Tweet=mongoose.model('Tweet',tweetSchema);
 
-module.exports={
-    Tweet
-}
+module.exports=Tweet
